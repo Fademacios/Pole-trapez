@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pole trapezu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            padding: 20px;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Oblicz pole trapezu</h2>
+        <button onclick="poleTrapezu()">Oblicz</button>
+    </div>
+
+    <script>
+        function poleTrapezu() {
+            var a, b, h;
+
+            while (true) {
+                a = parseFloat(prompt("Podaj długość podstawy a:"));
+                if (a > 0) break;
+                document.write("Błąd: Podstawa a musi być większa od 0!<br>");
+            }
+
+            while (true) {
+                b = parseFloat(prompt("Podaj długość podstawy b:"));
+                if (b > 0) break;
+                document.write("Błąd: Podstawa b musi być większa od 0!<br>");
+            }
+
+            while (true) {
+                h = parseFloat(prompt("Podaj wysokość h:"));
+                if (h > 0) break;
+                document.write("Błąd: Wysokość musi być większa od 0!<br>");
+            }
+
+            let pole = ((a + b) * h) / 2;
+            document.write("<h2>Pole trapezu wynosi: " + pole.toFixed(2) + "</h2>");
+        }
+    </script>
+
+</body>
+</html>
